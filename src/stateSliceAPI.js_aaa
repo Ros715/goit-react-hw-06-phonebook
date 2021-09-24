@@ -1,0 +1,51 @@
+import { createSlice, configureStore } from "@reduxjs/toolkit";
+
+const contactsSlice = createSlice({
+  name: "contacts",
+  initialState: {
+    contacts: {
+      items: [],
+      filter: "",
+    },
+  },
+  reducers: {
+    addContact: (state, action) => {
+      // Redux Toolkit allows us to write "mutating" logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a "draft state" and produces a brand new
+      // immutable state based off those changes
+      state.contacts.items.push(action.payload);
+    },
+    deleteContact: (state, action) => {
+      state.contacts.items = state.contacts.items.filter((item) => {
+        return item.id !== action.payload;
+      });
+    },
+    changeFilter: (state, action) => {
+      state.contacts.filter = action.payload;
+    },
+  },
+});
+
+export const { addContact, deleteContact, changeFilter } =
+  contactsSlice.actions;
+
+const store = configureStore({
+  reducer: contactsSlice.reducer,
+});
+
+export const selectContactsList = (state) => state.contacts.items;
+export const selectContactsFilter = (state) => state.contacts.filter;
+
+/*
+// Can still subscribe to the store
+store.subscribe(() => console.log(store.getState()));
+
+// Still pass action objects to `dispatch`, but they're created for us
+store.dispatch(incremented());
+// {value: 1}
+store.dispatch(incremented());
+// {value: 2}
+store.dispatch(decremented());
+// {value: 1}
+*/
