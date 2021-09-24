@@ -4,7 +4,7 @@ import Filter from "./components/Filter/Filter.js";
 import ContactList from "./components/ContactList/ContactList.js";
 import "./App.css";
 import { v4 as uuidv4 } from "uuid";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, connect } from "react-redux";
 import { addContact, deleteContact, changeFilter } from "./redux/actions";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
     if (selectedContact.length > 0) {
       alert(name + " is already in contacts");
     } else {
-      dispatch(addContact(uuidv4(), name, number));
+      dispatch(addContact({ id: uuidv4(), name, number }));
     }
   };
 
@@ -47,4 +47,4 @@ function App() {
 /*contacts={contacts}
   filter={filter}*/
 
-export default App;
+export default connect()(App);

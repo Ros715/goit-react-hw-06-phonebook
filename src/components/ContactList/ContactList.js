@@ -1,6 +1,6 @@
 //import styles from "./ContactList.module.css";
 import PropTypes from "prop-types";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, connect } from "react-redux";
 
 function fits(name, filter) {
   return name.toLowerCase().includes(filter.toLowerCase());
@@ -34,9 +34,9 @@ function ContactList({ /*contacts, filter,*/ onDelete }) {
 }
 
 ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  filter: PropTypes.string.isRequired,
+  //contacts: PropTypes.array.isRequired,
+  //filter: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
 };
 
-export default ContactList;
+export default connect()(ContactList);

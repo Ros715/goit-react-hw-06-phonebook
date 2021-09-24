@@ -1,3 +1,4 @@
+/*
 import { ADD_CONTACT, DELETE_CONTACT, CHANGE_FILTER } from "./actions-types";
 
 const INITIAL_STATE = {
@@ -39,3 +40,4 @@ export const reducer = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
+*/
