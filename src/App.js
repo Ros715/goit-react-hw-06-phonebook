@@ -39,13 +39,12 @@ function App() {
 
       <h2>Contacts</h2>
       <Filter onChange={onChangeFilter} />
-      <ContactList
-        contacts={contacts}
-        filter={filter}
-        onDelete={onDeleteContact}
-      />
+      <ContactList onDelete={onDeleteContact} />
     </div>
   );
 }
+
+/*contacts={contacts}
+  filter={filter}*/
 
 export default App;

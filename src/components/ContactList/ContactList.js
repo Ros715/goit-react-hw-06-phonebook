@@ -1,11 +1,15 @@
 //import styles from "./ContactList.module.css";
 import PropTypes from "prop-types";
+import { useSelector, useDispatch } from "react-redux";
 
 function fits(name, filter) {
   return name.toLowerCase().includes(filter.toLowerCase());
 }
 
-function ContactList({ contacts, filter, onDelete }) {
+function ContactList({ /*contacts, filter,*/ onDelete }) {
+  const contacts = useSelector((state) => state.contacts.items);
+  const filter = useSelector((state) => state.contacts.filter);
+
   return (
     <ul>
       {contacts
