@@ -9,7 +9,7 @@ import { addContact, deleteContact, changeFilter } from "./redux/actions";
 
 function App() {
   const contacts = useSelector((state) => state.contacts.items);
-  const filter = useSelector((state) => state.contacts.filter);
+  //const filter = useSelector((state) => state.contacts.filter);
   const dispatch = useDispatch();
   //console.log("filter=", filter, "contacts=", contacts);
 

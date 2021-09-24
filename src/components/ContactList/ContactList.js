@@ -1,6 +1,6 @@
 //import styles from "./ContactList.module.css";
 import PropTypes from "prop-types";
-import { useSelector, useDispatch, connect } from "react-redux";
+import { useSelector, /*useDispatch,*/ connect } from "react-redux";
 
 function fits(name, filter) {
   return name.toLowerCase().includes(filter.toLowerCase());

@@ -73,7 +73,6 @@ export const changeFilter = createAction(CHANGE_FILTER);
 
 export const reducer = createReducer(INITIAL_STATE, {
   ADD_CONTACT: (state, action) => {
-    console.log(state, action);
     return {
       ...state,
       contacts: {
