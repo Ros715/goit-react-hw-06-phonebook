@@ -7,8 +7,8 @@ function fits(name, filter) {
 }
 
 function ContactList({ /*contacts, filter,*/ onDelete }) {
-  const contacts = useSelector((state) => state.contacts.items);
-  const filter = useSelector((state) => state.contacts.filter);
+  const contacts = useSelector((state) => state.contacts);
+  const filter = useSelector((state) => state.filter);
 
   return (
     <ul>

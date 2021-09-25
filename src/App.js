@@ -8,10 +8,11 @@ import { useSelector, useDispatch, connect } from "react-redux";
 import { addContact, deleteContact, changeFilter } from "./redux/actions";
 
 function App() {
-  const contacts = useSelector((state) => state.contacts.items);
-  //const filter = useSelector((state) => state.contacts.filter);
+  //const fullState = useSelector((state) => state);
+  //console.log(fullState);
+  const contacts = useSelector((state) => state.contacts);
+  //const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
-  //console.log("filter=", filter, "contacts=", contacts);
 
   const onAddContact = (name, number) => {
     const selectedContact = contacts.filter((contact) => {
